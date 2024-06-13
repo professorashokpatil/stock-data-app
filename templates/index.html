@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Data Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+        label, input {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        a {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Stock Data</h1>
+    <form action="/add" method="POST">
+        <label for="serial_number">Serial Number:</label>
+        <input type="text" id="serial_number" name="serial_number" required>
+
+        <label for="name">Name of Stock:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="open_price">Open Price:</label>
+        <input type="number" step="0.01" id="open_price" name="open_price" required>
+
+        <label for="close_price">Close Price:</label>
+        <input type="number" step="0.01" id="close_price" name="close_price" required>
+
+        <label for="high_price">High Price:</label>
+        <input type="number" step="0.01" id="high_price" name="high_price" required>
+
+        <label for="low_price">Low Price:</label>
+        <input type="number" step="0.01" id="low_price" name="low_price" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <a href="/view">View Stock Data</a>
+    <a href="/learn">Learn More about Stock Market!</a>
+</body>
+</html>

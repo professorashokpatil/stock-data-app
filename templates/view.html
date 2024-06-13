@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Stock Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        a {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stock Data</h1>
+    <table>
+        <tr>
+            <th>Serial Number</th>
+            <th>Name</th>
+            <th>Open Price</th>
+            <th>Close Price</th>
+            <th>High Price</th>
+            <th>Low Price</th>
+            <th>Date</th>
+        </tr>
+        {% for stock in stocks %}
+        <tr>
+            <td>{{ stock[1] }}</td>
+            <td>{{ stock[2] }}</td>
+            <td>{{ stock[3] }}</td>
+            <td>{{ stock[4] }}</td>
+            <td>{{ stock[5] }}</td>
+            <td>{{ stock[6] }}</td>
+            <td>{{ stock[7] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Add New Stock Data</a>
+    <a href="/learn">Learn More about Stock Market!</a>
+</body>
+</html>
+ 
